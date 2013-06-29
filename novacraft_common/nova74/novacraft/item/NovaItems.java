@@ -32,7 +32,7 @@ public class NovaItems {
     LanguageRegistry.addName(alloy1Shovel, "Iron-Gold Shovel");
     
     alloy1Hatchet = new ItemAlloy1Hatchet(ItemIds.ALLOY1HATCHET, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Hatchet");
-    LanguageRegistry.addName(alloy1Hatchet, "Iron-Gold Hatchet");
+    LanguageRegistry.addName(alloy1Hatchet, "Iron-Gold Axe");
     
     alloy1Hoe = new ItemAlloy1Hoe(ItemIds.ALLOY1HOE, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Hoe");
     LanguageRegistry.addName(alloy1Hoe, "Iron-Gold Hoe");
