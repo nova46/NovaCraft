@@ -1,0 +1,20 @@
+[
+{
+    "modid": "NOVACRAFT",
+    "name": "Novacraft!",
+    "description": "Expand your Minecraft experience, yet keep that beautiful Vanilla feel.",
+    "version": "0.0.0.3",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Nova74"
+    ],
+    "credits": "",
+    "logoFile":"",
+    "screenshots":[
+    ],
+    "parent":"",
+    "dependencies":[
+    ]
+}
+]
