@@ -2,6 +2,7 @@ package nova74.novacraft.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import nova74.novacraft.lib.ItemIds;
@@ -15,6 +16,15 @@ public class NovaItems {
     public static Item alloy1Hatchet;
     public static Item alloy1Hoe;
     public static Item alloy1Sword;
+    public static Item alloy2Ingot;
+    public static Item alloy2Soft;
+    public static Item alloy2Pick;
+//    public static Item alloy2Shovel;
+//    public static Item alloy2Hatchet;
+//    public static Item alloy2Hoe;
+//    public static Item alloy2Sword;
+    public static Item diaChisel;
+    public static Item obsHandle;
     
     public static void init(){
 //Define Items
@@ -40,12 +50,29 @@ public class NovaItems {
     alloy1Sword = new ItemAlloy1Sword(ItemIds.ALLOY1SWORD, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Sword");
     LanguageRegistry.addName(alloy1Sword, "Iron-Gold Sword");
     
+    alloy2Ingot = new ItemAlloy2Ingot(ItemIds.ALLOY2INGOT).setUnlocalizedName("alloy2Ingot");
+    LanguageRegistry.addName(alloy2Ingot, "Gold-Diamond Alloy");
+    
+    alloy2Soft = new ItemAlloy2Soft(ItemIds.ALLOY2SOFT).setUnlocalizedName("alloy2Soft");
+    LanguageRegistry.addName(alloy2Soft, "Soft Gold-Diamond Alloy");
+
+    alloy2Pick = new ItemAlloy2Pick(ItemIds.ALLOY2PICK, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy2Pick");
+    LanguageRegistry.addName(alloy2Pick,"Gold-Diamond Pickaxe");
+    
+  //after alloys
+    diaChisel = new ItemDiaChisel(ItemIds.DIACHISEL, NovaToolMaterial.ChiselMaterial).setUnlocalizedName("diaChisel");
+    LanguageRegistry.addName(diaChisel, "Diamond Chisel");
+    obsHandle = new ItemObsHandle(ItemIds.OBSHANDLE).setUnlocalizedName("obsHandle");
+    LanguageRegistry.addName(obsHandle, "Obsidian Handle");
+    
    
 //Define Recipes
   //ItemStacks
     ItemStack ironStack = new ItemStack(Item.ingotIron);
     ItemStack goldStack = new ItemStack(Item.ingotGold);
     ItemStack stickStack = new ItemStack(Item.stick);
+    ItemStack diaStack = new ItemStack(Item.diamond);
+    ItemStack obsStack = new ItemStack(Block.obsidian);
     
   //alloy1Ingot
     GameRegistry.addRecipe(new ItemStack(alloy1Ingot), "y", "x",
@@ -71,6 +98,23 @@ public class NovaItems {
   //alloy1Sword
     GameRegistry.addRecipe(new ItemStack(alloy1Sword), "x", "x", "y",
             'x', alloy1Soft, 'y', stickStack);
+  //alloy2Ingot
+    GameRegistry.addRecipe(new ItemStack(alloy2Ingot, 3), "xxx", "yyy",
+            'x', goldStack, 'y', diaStack);
+  //alloy2Soft
+    GameRegistry.addSmelting(alloy2Ingot.itemID, new ItemStack(alloy2Soft), 1.5F);
+    
+  //alloy2Pick
+    GameRegistry.addRecipe(new ItemStack(alloy2Pick), "xxx", " y ", " y ",
+            'x', alloy2Soft, 'y', stickStack);
+    
+//after alloys
+  //diaChisel
+    GameRegistry.addRecipe(new ItemStack(diaChisel), "x", "y",
+            'x', diaStack, 'y', stickStack);
+  //obsHandle
+    GameRegistry.addRecipe(new ItemStack(obsHandle, 4), "x ", "xy",
+            'x', obsStack, 'y', diaChisel);
   }
 
 }
