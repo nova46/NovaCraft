@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import nova74.novacraft.item.NovaItems;
@@ -19,11 +20,21 @@ public class NovaBlocks {
     public static void init(){
         //Define Blocks
       //alloy1Block
-        alloy1Block = new BlockAlloy1(BlockIds.ALLOY1_BLOCK, Material.iron).setUnlocalizedName("alloy1Block");
+        alloy1Block = new BlockNovaGeneric(BlockIds.ALLOY1_BLOCK, Material.iron)
+            .setUnlocalizedName("alloy1Block")
+            .setCreativeTab(CreativeTabs.tabBlock)
+            .setHardness(4.0F)
+            .setResistance(10.0F);
         GameRegistry.registerBlock(alloy1Block, Reference.MOD_ID + Strings.ALLOY1_BLOCK_NAME);
         LanguageRegistry.addName(alloy1Block, "Iron-Gold Block");
-      //Lantern
-        ironLantern = new BlockIronLantern(BlockIds.IRON_LANTERN, Material.iron).setUnlocalizedName("ironLantern");
+        
+      //ironLantern
+        ironLantern = new BlockNovaGeneric(BlockIds.IRON_LANTERN, Material.iron)
+            .setUnlocalizedName("ironLantern")
+            .setCreativeTab(CreativeTabs.tabDecorations)
+            .setHardness(5.0F)
+            .setResistance(10.0F)
+            .setLightValue(1.0F);
         GameRegistry.registerBlock(ironLantern, Reference.MOD_ID + Strings.IRON_LANTERN_NAME);
         LanguageRegistry.addName(ironLantern, "Iron Lantern");
         
@@ -43,5 +54,4 @@ public class NovaBlocks {
         GameRegistry.addRecipe(new ItemStack(ironLantern), "xxx", "xyx","zzz",
                 'x', glasspaneStack, 'y', torchStack, 'z', ironStack);
     }
-
 }

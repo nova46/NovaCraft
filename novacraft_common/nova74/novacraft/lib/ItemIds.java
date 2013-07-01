@@ -17,4 +17,5 @@ public class ItemIds {
     public static int ALLOY2SWORD = 5269;
     public static int DIACHISEL = 5270;
     public static int OBSHANDLE = 5271;
+    
 }

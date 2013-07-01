@@ -3,6 +3,7 @@ package nova74.novacraft.item;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import nova74.novacraft.lib.ItemIds;
@@ -28,41 +29,55 @@ public class NovaItems {
     
     public static void init(){
 //Define Items
-
-    alloy1Ingot = new ItemAlloy1Ingot(ItemIds.ALLOY1INGOT).setUnlocalizedName("alloy1Ingot");
+  //Alloy1
+    alloy1Ingot = new ItemNovaGeneric(ItemIds.ALLOY1INGOT).setUnlocalizedName("alloy1Ingot").setCreativeTab(CreativeTabs.tabMaterials);
     LanguageRegistry.addName(alloy1Ingot, "Iron-Gold Alloy");
     
-    alloy1Soft = new ItemAlloy1Soft(ItemIds.ALLOY1SOFT).setUnlocalizedName("alloy1Soft");
+    alloy1Soft = new ItemNovaGeneric(ItemIds.ALLOY1SOFT).setUnlocalizedName("alloy1Soft").setCreativeTab(CreativeTabs.tabMaterials);
     LanguageRegistry.addName(alloy1Soft, "Soft Iron-Gold Alloy");
 
-    alloy1Pick = new ItemAlloy1Pick(ItemIds.ALLOY1PICK, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Pick");
+    alloy1Pick = new ItemNovaPick(ItemIds.ALLOY1PICK, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Pick").setCreativeTab(CreativeTabs.tabTools);
     LanguageRegistry.addName(alloy1Pick,"Iron-Gold Pickaxe");
     
-    alloy1Shovel = new ItemAlloy1Shovel(ItemIds.ALLOY1SHOVEL, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Shovel");
+    alloy1Shovel = new ItemNovaShovel(ItemIds.ALLOY1SHOVEL, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Shovel").setCreativeTab(CreativeTabs.tabTools);
     LanguageRegistry.addName(alloy1Shovel, "Iron-Gold Shovel");
     
-    alloy1Hatchet = new ItemAlloy1Hatchet(ItemIds.ALLOY1HATCHET, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Hatchet");
+    alloy1Hatchet = new ItemNovaHatchet(ItemIds.ALLOY1HATCHET, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Hatchet").setCreativeTab(CreativeTabs.tabTools);
     LanguageRegistry.addName(alloy1Hatchet, "Iron-Gold Axe");
     
-    alloy1Hoe = new ItemAlloy1Hoe(ItemIds.ALLOY1HOE, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Hoe");
+    alloy1Hoe = new ItemNovaHoe(ItemIds.ALLOY1HOE, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Hoe").setCreativeTab(CreativeTabs.tabTools);
     LanguageRegistry.addName(alloy1Hoe, "Iron-Gold Hoe");
     
-    alloy1Sword = new ItemAlloy1Sword(ItemIds.ALLOY1SWORD, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Sword");
+    alloy1Sword = new ItemNovaSword(ItemIds.ALLOY1SWORD, NovaToolMaterial.Alloy1Material).setUnlocalizedName("alloy1Sword").setCreativeTab(CreativeTabs.tabCombat);
     LanguageRegistry.addName(alloy1Sword, "Iron-Gold Sword");
     
-    alloy2Ingot = new ItemAlloy2Ingot(ItemIds.ALLOY2INGOT).setUnlocalizedName("alloy2Ingot");
+  //Alloy2
+    alloy2Ingot = new ItemNovaGeneric(ItemIds.ALLOY2INGOT).setUnlocalizedName("alloy2Ingot").setCreativeTab(CreativeTabs.tabMaterials);
     LanguageRegistry.addName(alloy2Ingot, "Gold-Diamond Alloy");
     
-    alloy2Soft = new ItemAlloy2Soft(ItemIds.ALLOY2SOFT).setUnlocalizedName("alloy2Soft");
+    alloy2Soft = new ItemNovaGeneric(ItemIds.ALLOY2SOFT).setUnlocalizedName("alloy2Soft").setCreativeTab(CreativeTabs.tabMaterials);
     LanguageRegistry.addName(alloy2Soft, "Soft Gold-Diamond Alloy");
 
-    alloy2Pick = new ItemAlloy2Pick(ItemIds.ALLOY2PICK, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy2Pick");
+    alloy2Pick = new ItemNovaPick(ItemIds.ALLOY2PICK, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy2Pick").setCreativeTab(CreativeTabs.tabTools);
     LanguageRegistry.addName(alloy2Pick,"Gold-Diamond Pickaxe");
     
+//    alloy2Shovel = new ItemNovaShovel(ItemIds.ALLOY2SHOVEL, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy2Shovel").setCreativeTab(CreativeTabs.tabTools);
+//    LanguageRegistry.addName(alloy2Shovel, "Gold-Diamond Shovel");
+//    
+//    alloy2Hatchet = new ItemNovaHatchet(ItemIds.ALLOY2HATCHET, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy1Hatchet").setCreativeTab(CreativeTabs.tabTools);
+//    LanguageRegistry.addName(alloy2Hatchet, "Gold-Diamond Axe");
+//    
+//    alloy2Hoe = new ItemNovaHoe(ItemIds.ALLOY2HOE, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy2Hoe").setCreativeTab(CreativeTabs.tabTools);
+//    LanguageRegistry.addName(alloy2Hoe, "Gold-Diamond Hoe");
+//    
+//    alloy2Sword = new ItemNovaSword(ItemIds.ALLOY2SWORD, NovaToolMaterial.Alloy2Material).setUnlocalizedName("alloy2Sword").setCreativeTab(CreativeTabs.tabCombat);
+//    LanguageRegistry.addName(alloy2Sword, "Gold-Diamond Sword");
+    
   //after alloys
-    diaChisel = new ItemDiaChisel(ItemIds.DIACHISEL, NovaToolMaterial.ChiselMaterial).setUnlocalizedName("diaChisel");
+    diaChisel = new ItemNovaPick(ItemIds.DIACHISEL, NovaToolMaterial.ChiselMaterial).setUnlocalizedName("diaChisel").setCreativeTab(CreativeTabs.tabTools);
     LanguageRegistry.addName(diaChisel, "Diamond Chisel");
-    obsHandle = new ItemObsHandle(ItemIds.OBSHANDLE).setUnlocalizedName("obsHandle");
+    
+    obsHandle = new ItemNovaGeneric(ItemIds.OBSHANDLE).setUnlocalizedName("obsHandle").setCreativeTab(CreativeTabs.tabMaterials);
     LanguageRegistry.addName(obsHandle, "Obsidian Handle");
     
    
@@ -107,7 +122,6 @@ public class NovaItems {
   //alloy2Pick
     GameRegistry.addRecipe(new ItemStack(alloy2Pick), "xxx", " y ", " y ",
             'x', alloy2Soft, 'y', stickStack);
-    
 //after alloys
   //diaChisel
     GameRegistry.addRecipe(new ItemStack(diaChisel), "x", "y",
