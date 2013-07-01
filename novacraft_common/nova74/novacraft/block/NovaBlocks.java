@@ -38,19 +38,21 @@ public class NovaBlocks {
         GameRegistry.registerBlock(ironLantern, Reference.MOD_ID + Strings.IRON_LANTERN_NAME);
         LanguageRegistry.addName(ironLantern, "Iron Lantern");
         
-//Define Recipes
-     //ItemStacks
+//Recipes
+    //ItemStacks
         ItemStack glasspaneStack = new ItemStack(Block.thinGlass);
         ItemStack torchStack = new ItemStack(Block.torchWood);
         ItemStack ironStack = new ItemStack(Item.ingotIron);
         
-        //alloy1Block get
+    //Alloy1
+      //alloy1Block get
         GameRegistry.addRecipe(new ItemStack(alloy1Block), "xxx", "xxx","xxx",
                 'x', NovaItems.alloy1Ingot);
-        //alloy1Block give
+      //alloy1Block give
         GameRegistry.addRecipe(new ItemStack(NovaItems.alloy1Ingot, 9), "x",
                 'x', alloy1Block);
-        //lantern get
+    //Iron Lantern
+      //lantern get
         GameRegistry.addRecipe(new ItemStack(ironLantern), "xxx", "xyx","zzz",
                 'x', glasspaneStack, 'y', torchStack, 'z', ironStack);
     }
